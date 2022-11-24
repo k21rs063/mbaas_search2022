@@ -14,10 +14,10 @@
     let ncmb = new NCMB(appKey, clientKey);
     // 本アプリで使うクラスの指定。const は定数の宣言。変更できない変数と思えば良い。
     const db = "m";
-
+    order(field,order);
     function fetchAll() {
       let TestDataClass = ncmb.DataStore(db);
-      TestDataClass.fetchAll()
+      TestDataClass.order("level",true).fetchAll()
         .then(function(results) {
           showResults(results);
         })
